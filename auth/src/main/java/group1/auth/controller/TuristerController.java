@@ -85,6 +85,6 @@ public class TuristerController {
 
     @GetMapping("/test")
     public String test() {
-        return "TEST";
+        return "TEST2";
     }
 }
