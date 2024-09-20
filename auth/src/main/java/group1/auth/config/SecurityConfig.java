@@ -33,7 +33,8 @@ public class SecurityConfig {
                 .disable()
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(registry -> {
-                    registry.requestMatchers("/turister/registro", "/turister/login", "/turister/test", "/turister/usuarios", "/turister/usuarios/exportar").permitAll();
+                    registry.requestMatchers("/turister/registro", "/turister/login", "/turister/test").permitAll();
+                    registry.requestMatchers("/turister/usuarios", "/turister/usuarios/exportar").hasRole("USER");
                     registry.anyRequest().authenticated();
                 })
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
