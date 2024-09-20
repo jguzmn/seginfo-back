@@ -15,7 +15,7 @@ public class AppConfig implements WebMvcConfigurer {
                         "http://localhost:5173",
                         "http://localhost:3000")
                 .allowedHeaders("*")
-                .allowedMethods("*")
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowCredentials(true);
     }
 }
